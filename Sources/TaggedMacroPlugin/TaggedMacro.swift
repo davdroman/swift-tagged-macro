@@ -40,7 +40,13 @@ public struct TaggedMacro: DeclarationMacro {
 			"Void"
 		}
 
-		let taggedType = "Tagged<(\(taggedContextualType), \(typealiasName): ()), \(rawValueType)>"
+		let uniqueTypealiasName = if taggedContextualType == "Void" {
+			context.makeUniqueName(typealiasName).text
+		} else {
+			typealiasName
+		}
+
+		let taggedType = "Tagged<(\(taggedContextualType), \(uniqueTypealiasName): ()), \(rawValueType)>"
 
 		return [
 			"""
