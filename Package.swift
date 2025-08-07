@@ -47,6 +47,10 @@ let package = Package(
 			dependencies: [
 				"TaggedMacroPlugin",
 				.product(name: "MacroTesting", package: "swift-macro-testing"),
+				// fixes error:
+				// - on Xcode 16.4.0: Missing required module 'SwiftCompilerPlugin'
+				// - on Xcode 26.0.0-beta.4: Compilation search paths unable to resolve module dependency: 'SwiftCompilerPlugin'
+				.product(name: "SwiftCompilerPlugin", package: "swift-syntax"),
 			]
 		),
 	]
