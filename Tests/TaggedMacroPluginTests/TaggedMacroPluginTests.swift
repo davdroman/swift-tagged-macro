@@ -170,16 +170,29 @@ struct TaggedMacroPluginTests {
 		}
 	}
 
+	// NB: top-level declarations are not supported for arbitrarily named freestanding declaration macros.
+	// Hence the syntax below would not compile, but we're future-proofing it anyway just in case.
+	// error: 'declaration' macros are not allowed to introduce arbitrary names at global scope
 	@Test func asTopLevelDeclarations() {
 		assertMacro {
 			"""
+			// Module A
+			#Tagged<UUID>("ID")
+			private #Tagged<String>("Email")
+
+			// Module B
 			#Tagged<UUID>("ID")
 			private #Tagged<String>("Email")
 			"""
 		} expansion: {
 			"""
-			typealias ID = Tagged<(Void, ID: ()), UUID>
-			private typealias Email = Tagged<(Void, Email: ()), String>
+			// Module A
+			typealias ID = Tagged<(Void, __macro_local_2IDfMu_: ()), UUID>
+			private typealias Email = Tagged<(Void, __macro_local_5EmailfMu_: ()), String>
+
+			// Module B
+			typealias ID = Tagged<(Void, __macro_local_2IDfMu0_: ()), UUID>
+			private typealias Email = Tagged<(Void, __macro_local_5EmailfMu0_: ()), String>
 			"""
 		}
 	}
