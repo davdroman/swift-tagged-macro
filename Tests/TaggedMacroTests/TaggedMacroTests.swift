@@ -24,9 +24,10 @@ enum ContextB {
 @Suite
 struct TaggedMacroTests {
 	@Test func distinct() {
+		#expect(ContextA.User.ID.self != ContextB.User.ID.self)
+		#expect(ContextA.User.Age.self != ContextB.User.Age.self)
 		#expect(ContextA.User.ID.self != ContextA.User.Age.self)
 		#expect(ContextA.User.ID.self != ContextB.User.Age.self)
-		#expect(ContextA.User.ID.self != ContextB.User.ID.self)
 	}
 
 	@Test func rawTypes() {
