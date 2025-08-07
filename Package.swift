@@ -47,6 +47,9 @@ let package = Package(
 			dependencies: [
 				"TaggedMacroPlugin",
 				.product(name: "MacroTesting", package: "swift-macro-testing"),
+				// fixes error: Compilation search paths unable to resolve module dependency: 'SwiftCompilerPlugin'
+				// might be related to swift-syntax prebuilts?
+				.product(name: "SwiftCompilerPlugin", package: "swift-syntax"),
 			]
 		),
 	]
