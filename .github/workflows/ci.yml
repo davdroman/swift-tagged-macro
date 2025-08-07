@@ -17,7 +17,7 @@ concurrency:
 jobs:
   macOS:
     name: ${{ matrix.platform }} (Swift ${{ matrix.swift }})
-    runs-on: ${{ matrix.os }}
+    runs-on: macos-15
     strategy:
       fail-fast: false
       matrix:
@@ -26,11 +26,7 @@ jobs:
         swift:
           - "6.0"
           - "6.1"
-        include:
-          - swift: "6.0"
-            os: macos-15
-          - swift: "6.1"
-            os: macos-15
+          - "6.2"
     steps:
       - uses: actions/checkout@v4
       - uses: mxcl/xcodebuild@v3
