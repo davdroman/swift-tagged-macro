@@ -1,3 +1,4 @@
+#if canImport(TaggedMacroPlugin)
 import MacroTesting
 import TaggedMacroPlugin
 import Testing
@@ -237,3 +238,4 @@ struct TaggedMacroPluginTests {
 		}
 	}
 }
+#endif
