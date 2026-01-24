@@ -3,14 +3,14 @@ import Testing
 
 @Suite
 struct TaggedMacroTests {
-	public struct User {
-		public #Tagged<Int>("ID")
-		public #Tagged<Int>("Age")
+	struct User {
+		#Tagged<Int>("ID")
+		#Tagged<Int>("Age")
 
-		public let id: ID
-		public let age: Age
+		let id: ID
+		let age: Age
 
-		public init(id: ID, age: Age) {
+		init(id: ID, age: Age) {
 			self.id = id
 			self.age = age
 		}
