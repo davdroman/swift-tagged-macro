@@ -51,7 +51,7 @@ public struct TaggedMacro: DeclarationMacro {
 		return [
 			"""
 			typealias \(raw: typealiasName) = \(raw: taggedType) 
-			"""
+			""",
 		]
 	}
 }

@@ -1,8 +1,8 @@
 // swift-tools-version: 6.0
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
-import PackageDescription
 import CompilerPluginSupport
+import PackageDescription
 
 let package = Package(
 	name: "swift-tagged-macro",
@@ -47,9 +47,8 @@ let package = Package(
 			dependencies: [
 				"TaggedMacroPlugin",
 				.product(name: "MacroTesting", package: "swift-macro-testing"),
-				// fixes error:
-				// - on Xcode 16.4.0: Missing required module 'SwiftCompilerPlugin'
-				// - on Xcode 26.0.0-beta.4: Compilation search paths unable to resolve module dependency: 'SwiftCompilerPlugin'
+				// For some reason, with Swift Syntax prebuilts enabled, we need to depend on SwiftCompilerPlugin here to work around error:
+				// Compilation search paths unable to resolve module dependency: 'SwiftCompilerPlugin'
 				.product(name: "SwiftCompilerPlugin", package: "swift-syntax"),
 			]
 		),

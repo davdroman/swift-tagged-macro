@@ -23,6 +23,19 @@ enum ContextB {
 
 @Suite
 struct TaggedMacroTests {
+	struct User {
+		#Tagged<Int>("ID")
+		#Tagged<Int>("Age")
+
+		let id: ID
+		let age: Age
+
+		init(id: ID, age: Age) {
+			self.id = id
+			self.age = age
+		}
+	}
+
 	@Test func distinct() {
 		#expect(ContextA.User.ID.self != ContextB.User.ID.self)
 		#expect(ContextA.User.Age.self != ContextB.User.Age.self)
