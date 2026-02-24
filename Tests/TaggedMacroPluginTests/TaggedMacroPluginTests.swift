@@ -1,5 +1,7 @@
 #if canImport(TaggedMacroPlugin)
 import MacroTesting
+import SnapshotTesting
+import SwiftSyntax
 @testable import TaggedMacroPlugin
 import Testing
 
