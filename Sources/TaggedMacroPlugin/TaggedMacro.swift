@@ -1,10 +1,11 @@
 import Foundation
 import SwiftDiagnostics
 import SwiftSyntax
+import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 
-public struct TaggedMacro: DeclarationMacro {
-	public static func expansion(
+struct TaggedMacro: DeclarationMacro {
+	static func expansion(
 		of node: some FreestandingMacroExpansionSyntax,
 		in context: some MacroExpansionContext
 	) throws -> [DeclSyntax] {

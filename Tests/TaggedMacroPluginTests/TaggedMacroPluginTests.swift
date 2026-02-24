@@ -1,6 +1,6 @@
 #if canImport(TaggedMacroPlugin)
 import MacroTesting
-import TaggedMacroPlugin
+@testable import TaggedMacroPlugin
 import Testing
 
 @Suite(
