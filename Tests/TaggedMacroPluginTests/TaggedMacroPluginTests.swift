@@ -2,15 +2,15 @@
 import MacroTesting
 import SnapshotTesting
 import SwiftSyntax
-@testable import TaggedMacroPlugin
 import Testing
+@testable import TaggedMacroPlugin
 
 @Suite(
 	.macros(
 		["Tagged": TaggedMacro.self],
 		indentationWidth: .tab,
-		record: .missing
-	)
+		record: .missing,
+	),
 )
 struct TaggedMacroPluginTests {
 	@Test func insideStruct() {

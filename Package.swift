@@ -22,13 +22,13 @@ let package = Package(
 			dependencies: [
 				.product(name: "Tagged", package: "swift-tagged"),
 				"TaggedMacroPlugin",
-			]
+			],
 		),
 		.testTarget(
 			name: "TaggedMacroTests",
 			dependencies: [
 				"TaggedMacro",
-			]
+			],
 		),
 
 		.macro(
@@ -36,7 +36,7 @@ let package = Package(
 			dependencies: [
 				.product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
 				.product(name: "SwiftCompilerPlugin", package: "swift-syntax"),
-			]
+			],
 		),
 		.testTarget(
 			name: "TaggedMacroPluginTests",
@@ -44,9 +44,9 @@ let package = Package(
 				"TaggedMacroPlugin",
 				.product(name: "MacroTesting", package: "swift-macro-testing"),
 				.product(name: "SwiftCompilerPlugin", package: "swift-syntax"),
-			]
+			],
 		),
-	]
+	],
 )
 
 package.dependencies += [
