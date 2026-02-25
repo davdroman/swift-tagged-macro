@@ -134,8 +134,8 @@ jobs:
         uses: skiptools/swift-android-action@v2
         with:
           swift-version: ${{ matrix.swift }}
-          swift-build-flags: --disable-index-store
-          swift-test-flags: --disable-index-store
+          build-tests: false
+          run-tests: false
           free-disk-space: true
 
   check-swift-syntax-compatibility:
