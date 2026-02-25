@@ -103,8 +103,13 @@ jobs:
         swift:
           - "6.1"
           - "6.2"
+        include:
+          - swift: "6.1"
+            image: swift:6.1
+          - swift: "6.2"
+            image: swiftlang/swift:nightly-6.2-jammy # swift:6.2 is stuck on 6.2.1, missing SwiftCompilerPlugin fix
     container:
-      image: swift:${{ matrix.swift }}
+      image: ${{ matrix.image }}
     steps:
       - name: Git Checkout
         uses: actions/checkout@v5
