@@ -1,12 +1,13 @@
 import Foundation
 import SwiftDiagnostics
 import SwiftSyntax
+import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 
-public struct TaggedMacro: DeclarationMacro {
-	public static func expansion(
+struct TaggedMacro: DeclarationMacro {
+	static func expansion(
 		of node: some FreestandingMacroExpansionSyntax,
-		in context: some MacroExpansionContext
+		in context: some MacroExpansionContext,
 	) throws -> [DeclSyntax] {
 		guard
 			let typealiasNameNode = node.arguments.first?.expression.as(StringLiteralExprSyntax.self),
@@ -19,8 +20,8 @@ public struct TaggedMacro: DeclarationMacro {
 			context.diagnose(
 				Diagnostic(
 					node: typealiasNameNode,
-					message: MacroExpansionErrorMessage("Tagged macro requires a valid typealias name")
-				)
+					message: MacroExpansionErrorMessage("Tagged macro requires a valid typealias name"),
+				),
 			)
 			return []
 		}

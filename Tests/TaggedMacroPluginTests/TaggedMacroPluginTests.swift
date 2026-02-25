@@ -1,14 +1,16 @@
 #if canImport(TaggedMacroPlugin)
 import MacroTesting
-import TaggedMacroPlugin
+import SnapshotTesting
+import SwiftSyntax
 import Testing
+@testable import TaggedMacroPlugin
 
 @Suite(
 	.macros(
 		["Tagged": TaggedMacro.self],
 		indentationWidth: .tab,
-		record: .missing
-	)
+		record: .missing,
+	),
 )
 struct TaggedMacroPluginTests {
 	@Test func insideStruct() {
