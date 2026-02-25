@@ -43,7 +43,6 @@ let package = Package(
 			dependencies: [
 				"TaggedMacroPlugin",
 				.product(name: "MacroTesting", package: "swift-macro-testing"),
-				.product(name: "SwiftCompilerPlugin", package: "swift-syntax"),
 			],
 		),
 	],
