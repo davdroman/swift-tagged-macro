@@ -3,7 +3,7 @@ import SwiftSyntaxMacros
 
 @main
 struct TaggedMacroPlugin: CompilerPlugin {
-	let providingMacros: [Macro.Type] = [
+	let providingMacros: [any Macro.Type] = [
 		TaggedMacro.self,
 	]
 }
