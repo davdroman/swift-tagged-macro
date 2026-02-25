@@ -135,6 +135,7 @@ jobs:
         with:
           swift-version: ${{ matrix.swift }}
           swift-build-flags: --disable-index-store
+          swift-test-flags: --disable-index-store
           free-disk-space: true
 
   check-swift-syntax-compatibility:
