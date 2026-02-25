@@ -130,7 +130,7 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@v5
 
-      - name: Build and Test Library
+      - name: Build Library
         uses: skiptools/swift-android-action@v2
         with:
           swift-version: ${{ matrix.swift }}
