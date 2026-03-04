@@ -101,7 +101,7 @@ jobs:
       fail-fast: false
       matrix:
         swift:
-          # TODO: Add "6.2" and "6.3" when swift:6.2/swift:6.3 Docker images are available
+          # TODO: Add "6.3" when swift:6.3 Docker image is available
           - "6.1"
     container:
       image: swift:${{ matrix.swift }}
@@ -119,7 +119,7 @@ jobs:
       fail-fast: false
       matrix:
         swift:
-          # TODO: Add "6.2" and "6.3" when swift:6.2/swift:6.3 Docker images are available
+          # TODO: Add "6.3" when swift:6.3 Docker image is available
           - "6.1"
     steps:
       - name: Git Checkout
