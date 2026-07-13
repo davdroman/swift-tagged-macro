@@ -3,6 +3,7 @@
 [![CI](https://github.com/davdroman/swift-tagged-macro/actions/workflows/ci.yml/badge.svg)](https://github.com/davdroman/swift-tagged-macro/actions/workflows/ci.yml)
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fdavdroman%2Fswift-tagged-macro%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/davdroman/swift-tagged-macro)
 [![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fdavdroman%2Fswift-tagged-macro%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/davdroman/swift-tagged-macro)
+[![](https://img.shields.io/badge/Documentation-gray?logo=swift&logoColor=white)](https://swiftpackageindex.com/davdroman/swift-tagged-macro/main/documentation/taggedmacro)
 
 A Swift macro built on top of Point-Free's [Tagged](https://github.com/pointfreeco/swift-tagged) library, with one key improvement: zero boilerplate, even in cases of collision.
 
