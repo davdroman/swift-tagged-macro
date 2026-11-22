@@ -43,7 +43,7 @@ struct TaggedMacroTests {
 		#expect(ContextA.User.ID.self != ContextB.User.Age.self)
 	}
 
-	@Test func rawTypes() {
+	@Test func `raw types`() {
 		#expect(ContextA.User.ID.self == Tagged<(ContextA.User, ID: ()), Int>.self)
 		#expect(ContextA.User.Age.self == Tagged<(ContextA.User, Age: ()), Int>.self)
 		#expect(ContextB.User.ID.self == Tagged<(ContextB.User, ID: ()), Int>.self)
