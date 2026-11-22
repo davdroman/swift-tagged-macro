@@ -2,8 +2,8 @@
 import MacroTesting
 import SnapshotTesting
 import SwiftSyntax
-import Testing
 @testable import TaggedMacroPlugin
+import Testing
 
 @Suite(
 	.macros(
@@ -13,7 +13,7 @@ import Testing
 	),
 )
 struct TaggedMacroPluginTests {
-	@Test func insideStruct() {
+	@Test func `inside struct`() {
 		assertMacro {
 			"""
 			struct User {
@@ -31,7 +31,7 @@ struct TaggedMacroPluginTests {
 		}
 	}
 
-	@Test func insideNestedStruct() {
+	@Test func `inside nested struct`() {
 		assertMacro {
 			"""
 			enum Models {
@@ -53,7 +53,7 @@ struct TaggedMacroPluginTests {
 		}
 	}
 
-	@Test func insideClass() {
+	@Test func `inside class`() {
 		assertMacro {
 			"""
 			class User {
@@ -71,7 +71,7 @@ struct TaggedMacroPluginTests {
 		}
 	}
 
-	@Test func insideNestedClass() {
+	@Test func `inside nested class`() {
 		assertMacro {
 			"""
 			enum Models {
@@ -93,7 +93,7 @@ struct TaggedMacroPluginTests {
 		}
 	}
 
-	@Test func insideEnum() {
+	@Test func `inside enum`() {
 		assertMacro {
 			"""
 			enum User {
@@ -111,7 +111,7 @@ struct TaggedMacroPluginTests {
 		}
 	}
 
-	@Test func insideNestedEnum() {
+	@Test func `inside nested enum`() {
 		assertMacro {
 			"""
 			enum Models {
@@ -133,7 +133,7 @@ struct TaggedMacroPluginTests {
 		}
 	}
 
-	@Test func insideActor() {
+	@Test func `inside actor`() {
 		assertMacro {
 			"""
 			actor User {
@@ -151,7 +151,7 @@ struct TaggedMacroPluginTests {
 		}
 	}
 
-	@Test func insideNestedActor() {
+	@Test func `inside nested actor`() {
 		assertMacro {
 			"""
 			enum Models {
@@ -176,7 +176,7 @@ struct TaggedMacroPluginTests {
 	// NB: top-level declarations are not supported for arbitrarily named freestanding declaration macros.
 	// Hence the syntax below would not compile, but we're future-proofing it anyway just in case.
 	// error: 'declaration' macros are not allowed to introduce arbitrary names at global scope
-	@Test func asTopLevelDeclarations() {
+	@Test func `as top level declarations`() {
 		assertMacro {
 			"""
 			// Module A
@@ -200,7 +200,7 @@ struct TaggedMacroPluginTests {
 		}
 	}
 
-	@Test func trimmingWhitespace() {
+	@Test func `trimming whitespace`() {
 		assertMacro {
 			"""
 			struct User {
@@ -218,7 +218,7 @@ struct TaggedMacroPluginTests {
 		}
 	}
 
-	@Test func errorEmptyTypealiasName() {
+	@Test func `error empty typealias name`() {
 		assertMacro {
 			"""
 			struct User {
